@@ -35,6 +35,64 @@ h1 {
     margin-bottom: 20px;
 }
 
+.status-win {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-draw {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.score-card {
+    background: #f1f5ff;
+    border-radius: 15px;
+    padding: 12px 10px;
+    box-shadow: inset 0 0 0 2px rgba(102, 126, 234, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.score-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+}
+
+.score-card.leader {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.35);
+}
+
+.score-card.leader .label,
+.score-card.leader .score {
+    color: #fff;
+}
+
+.score-card .label {
+    font-size: 0.9em;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score-card .score {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #4c51bf;
+}
+
 .current-player {
     font-size: 1.2em;
     color: #555;
@@ -156,6 +214,18 @@ h1 {
 @media (max-width: 480px) {
     .container {
         padding: 20px;
+    }
+
+    .scoreboard {
+        gap: 8px;
+    }
+
+    .score-card {
+        padding: 10px 8px;
+    }
+
+    .score-card .score {
+        font-size: 1.5em;
     }
 
     h1 {
