@@ -2,6 +2,7 @@ const gameBoard = document.getElementById('gameBoard');
 const currentPlayerDisplay = document.getElementById('currentPlayer');
 const statusDisplay = document.getElementById('status');
 const resetBtn = document.getElementById('resetBtn');
+const swapBtn = document.getElementById('swapBtn');
 const cells = document.querySelectorAll('[data-cell]');
 const scoreDisplays = {
     X: document.getElementById('scoreX'),
@@ -34,12 +35,12 @@ const winningConditions = [
     [2, 4, 6]  // Diagonal top-right to bottom-left
 ];
 
-function startGame() {
+function startGame(startingPlayer = 'X') {
     gameActive = true;
     gameState = ['', '', '', '', '', '', '', '', ''];
-    currentPlayer = 'X';
+    currentPlayer = startingPlayer;
     currentPlayerDisplay.textContent = currentPlayer;
-    setStatus('Player X, it\'s your turn!');
+    setStatus(`Player ${currentPlayer}, it's your turn!`);
     updateScoreboard();
     cells.forEach(cell => {
         cell.textContent = '';
@@ -149,8 +150,16 @@ function updateScoreboard() {
     }
 }
 
+function swapPlayers() {
+    [scores.X, scores.O] = [scores.O, scores.X];
+    const nextStarter = currentPlayer === 'X' ? 'O' : 'X';
+    startGame(nextStarter);
+    setStatus(`Players swapped! Player ${currentPlayer}, it's your turn!`);
+}
+
 // Event listeners
 resetBtn.addEventListener('click', resetGame);
+swapBtn.addEventListener('click', swapPlayers);
 
 // Start the game when the page loads
 document.addEventListener('DOMContentLoaded', startGame);

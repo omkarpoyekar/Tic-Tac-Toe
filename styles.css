@@ -174,24 +174,50 @@ h1 {
     }
 }
 
-.reset-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
-.reset-btn:hover {
-    transform: translateY(-2px);
+.swap-btn,
+.reset-btn {
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.swap-btn {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.35);
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 }
 
+.swap-btn:hover,
+.reset-btn:hover {
+    transform: translateY(-2px);
+}
+
+.swap-btn:hover {
+    box-shadow: 0 12px 24px rgba(255, 154, 158, 0.45);
+}
+
+.reset-btn:hover {
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+}
+
+.swap-btn:active,
 .reset-btn:active {
     transform: translateY(0);
 }
