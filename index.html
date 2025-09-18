@@ -13,6 +13,20 @@
             <div class="current-player">Current Player: <span id="currentPlayer">X</span></div>
             <div class="status" id="status"></div>
         </div>
+        <div class="scoreboard" aria-label="Scoreboard">
+            <div class="score-card" data-score-card="X">
+                <span class="label">Player X</span>
+                <span class="score" id="scoreX">0</span>
+            </div>
+            <div class="score-card" data-score-card="draws">
+                <span class="label">Draws</span>
+                <span class="score" id="scoreDraws">0</span>
+            </div>
+            <div class="score-card" data-score-card="O">
+                <span class="label">Player O</span>
+                <span class="score" id="scoreO">0</span>
+            </div>
+        </div>
         <div class="game-board" id="gameBoard">
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
@@ -24,7 +38,10 @@
             <div class="cell" data-cell></div>
             <div class="cell" data-cell></div>
         </div>
-        <button class="reset-btn" id="resetBtn">Reset Game</button>
+        <div class="controls">
+            <button class="swap-btn" id="swapBtn">Swap Players</button>
+            <button class="reset-btn" id="resetBtn">Reset Game</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
